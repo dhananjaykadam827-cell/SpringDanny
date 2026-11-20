@@ -1,19 +1,20 @@
 package com.example.Loose;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
-@Component("UserServiceSMS")
+@Component
 public class UserService {
     public NotificationService notificationService;
 
-    @Autowired
+
     public UserService() {
     }
 
     @Autowired
-    public UserService(NotificationService notificationService) {
+    public UserService(@Qualifier("SMSNotificationService") NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 
