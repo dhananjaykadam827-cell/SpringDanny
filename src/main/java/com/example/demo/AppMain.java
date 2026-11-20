@@ -10,14 +10,14 @@ public class AppMain {
         ApplicationContext context
                 = new AnnotationConfigApplicationContext(AppConfig.class);
         GreetingService greetingService
-                = (GreetingService) context.getBean("myBean");
+                = (GreetingService) context.getBean("greetingService");
         greetingService.sayHello();
 
 
-//        UserService userService
-//                = (UserService) context.getBean("UserServiceSMS");
-//        userService.notifyUser("What's up!");
-//
+        UserService userService
+                = (UserService) context.getBean("UserServiceSMS");
+        userService.notifyUser("What's up!");
+
 //        UserService userServiceEmail
 //                = (UserService) context.getBean("UserServiceEmail");
 //        userServiceEmail.notifyUser("What's up!");
